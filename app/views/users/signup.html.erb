@@ -10,15 +10,15 @@
             <%= message %>
         <% end %>
         <%= form_tag("/users/create", {multipart: true}) do %>  
-                <div class="user_images">
-                    <div class="question"><h3>ユーザー画像：</h3></div>
+                <!--<div class="user_images">-->
+                <!--    <div class="question"><h3>ユーザー画像：</h3></div>-->
                     <!--<div class="answer">-->
                     <!--    <input type="file" name="user_images" value="<%= "/user_images/#{@user.user_images}" %>">-->
                     <!--</div>-->
-                    <div class="answer">
-                            <%= select_tag 'genre', options_for_select([["猫", "/cat.jpg"], ["男性", "/male.jpg"], ["女性", "female.jpg"]], :selected => "猫") %>
-                    </div>  
-                </div>
+                <!--    <div class="answer">-->
+                <!--            <%= select_tag 'genre', options_for_select([["猫", "/cat.jpg"], ["男性", "/male.jpg"], ["女性", "female.jpg"]], :selected => "猫") %>-->
+                <!--    </div>  -->
+                <!--</div>-->
                 <div class="email">
                     <div class="question"><h3>メールアドレス：</h3></div>
                     <div class="answer">
