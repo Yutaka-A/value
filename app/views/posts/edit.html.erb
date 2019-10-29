@@ -1,0 +1,61 @@
+    <div class="edit-contents">
+        <div class="link-2">
+            <a href="/posts/index"><btn class="btn btn-lg btn-outline-secondary">投稿一覧</btn></a>
+        </div>
+        <div class="link">
+            <a href="<%= "/posts/#{@post.id}" %>"><btn class="btn btn-lg btn-outline-secondary">戻る</btn></a>
+        </div>
+        <div class="form-title">
+            <h2>価値観を<span>編集</span>しよう。</h2>            
+        </div>
+        <%= @post.errors.full_messages.each do |message| %>
+            <%= message %>
+        <% end %>
+        <%= form_tag("/posts/#{@post.id}/update") do %>
+            <div class="form-body">
+                <div class="title">
+                    <div class="question"><h3>作品：</h3></div>
+                    <div class="answer">
+                        <input type="text" name="title" value="<%= @post.title %>">
+                    </div>
+                </div>
+                <div class="genre">
+                    <div class="question"><h3>ジャンル：</h3></div>
+                    <div class="answer">
+                        <select class="form-control" name="genre"  value="<%= @post.genre %>">
+                            <option>漫画</option>
+                            <option>小説</option>
+                            <option>映画</option>
+                        </select>
+                    </div>  
+                </div>
+                <div class="content">
+                    <div class="question"><h3>作品の内容(ネタバレOK!)：</h3></div>
+                    <div class="answer">
+                        <textarea name="content"><%= @post.content %></textarea>
+                    </div>
+                </div>
+                <div class="value">
+                    <div class="question"><h3>価値観の変化：</h3></div>
+                    <div class="answer">
+                        <input type="text" name="value"  value="<%= @post.value %>">
+                    </div>
+                </div>
+                <div class="act">
+                    <div class="question"><h3>起こした行動：</h3></div>
+                    <div class="answer">
+                        <input type="text" name="act"  value="<%= @post.act %>">
+                    </div>
+                </div>
+                <div class="forWho">
+                    <div class="question"><h3>どんな人におすすめ？</h3></div>
+                    <div class="answer">
+                        <input type="text" name="forWho"  value="<%= @post.forWho %>">
+                    </div>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="更新">
+                </div>
+            </div>
+        <% end %>
+    </div>

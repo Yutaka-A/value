@@ -1,0 +1,28 @@
+<div class="user-show">
+    <div class="form-title">
+        <h2>ユーザー詳細</h2>            
+    </div>
+    <div class="post-contents">
+        <div class="link">
+            <a href="/posts/index"><btn class="btn btn-lg btn-outline-secondary">戻る</btn></a>
+        </div>
+    
+        <div class="posts">
+            <div class="post">
+                    <div class="post-body">
+                        <img src="<%= "/user_images/#{@user.user_images}" %>">
+                        <p class="borderline">ユーザー名：</p>
+                        <p><%= @user.name %></p>
+                        <p class="borderline">メールアドレス：</p>
+                        <p><%= @user.email %></p>
+                        <p class="borderline">貢献度：</p>
+                        <p>累計：<%= Install.where(post_id: @current_user.id).count + Post.where(user_id: @current_user.id).count %></p><p>( 投稿した数：<%= Post.where(user_id: @current_user.id).count %> / いいねされた数：<%= Install.where(post_id: @current_user.id).count %> )</p>
+                    </div>
+                    <div class="link3">
+                        <%= link_to("編集", "#{@user.id}/edit") %>
+                        <%= link_to("ログアウト", "/logout", {method: "post"}) %>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>

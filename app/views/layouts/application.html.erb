@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ぼくらの価値観=>：インストール</title>
+    <meta name="description" content="あなたの価値観を変えた作品を共有しよう。"/>
+    <meta name="keywords" content="SNS,価値観,作品,共有">
+    <link rel="icon" type="image/png"　href="https://valueinstaller.herokuapp.com/logosm-clear2.png">
+    
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@titlemaker_ytk" />
+    <meta property="og:url" content="https://valueinstaller.herokuapp.com/" />
+    <meta property="og:title" content="ぼくらの価値観=>：インストール" />
+    <meta property="og:description" content="あなたの価値観を変えた作品を共有しよう。" />
+    <meta property="og:image" content="https://valueinstaller.herokuapp.com/landscape-1.jpg" />
+
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if session[:user_id] %>
+      <div class="user">
+        <%= link_to(@current_user.name, "/users/#{@current_user.id}") %><br>
+        <div class="level">
+          <!--レベル表示：-->
+        貢献度：<%= Install.where(post_id: @current_user.id).count + Post.where(user_id: @current_user.id).count %>
+        </div>
+        
+      </div>
+    <% else %>
+      <div class="user">
+        <%= link_to("ログイン", "/login") %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

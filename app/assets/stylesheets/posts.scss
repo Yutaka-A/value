@@ -1,0 +1,699 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* 1024px以上の幅の場合に適応される */
+
+    .form-title{
+        // width:500px;
+        position: absolute;
+        top: 9%;
+        left: 5%;
+        // z-index: 0;
+        
+        h2{
+            font-size: 100px;
+            color: rgba(255,255,255,0.6);
+        }
+    }
+    .post-contents{
+        // height:800px;
+        background-image:url("/landscape-3.jpg");
+        background-size:cover;
+        background-position:center;
+        background-attachment:fixed;
+        .link{
+            position:fixed;
+            z-index:20;
+            top:10px;
+            right:30px;
+            a{
+                btn{
+                    border-color: rgba(255,255,255,0.6);
+                    color: rgba(255,255,255,0.6);
+                    font-size:24px;
+                    line-height:45px;
+                    width:200px;
+                    height:60px;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.9);
+                        border-color: rgba(0,0,0,0.6);
+                        color: rgba(0,0,0,0.6);
+                        
+                    }
+                }
+            }
+        }
+        .posts{
+            position:relative;
+            z-index:10;
+            // min-height:1500px;
+            padding-top:300px;
+            padding-bottom:100px;
+            .post{
+                a{
+                &:hover{
+                    text-decoration:none;
+                    opacity:0.95;
+                }
+    
+                background-color:rgba(255,255,255,0.75);
+                // min-width:50%;
+                width:600px;
+                // height:300px;
+                margin:50px auto;
+                padding:20px;
+                // border:1px solid #808080;
+                border-radius:6px;
+                box-shadow: 1px 1px 2px #fff;
+                // box-shadow:2px 2px 4px blue;
+                overflow:hidden;
+                display:flex;
+                flex-wrap:wrap;
+                align-items:center;
+                .post-header{
+                    width:100%;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                        img{
+                            width:60px;
+                            height:60px;
+                            border-radius:50%;
+                            // margin:0 15px 15px 15px;
+                        }
+                        h3{
+                            font-size:24px;
+                            // margin:0 0 12px 20px;
+                        }
+                        .genre{
+                            // margin:0 0 12px 20px;
+                            width:80px;
+                        }
+                }
+                .post-body{
+                    width:580px;
+                    margin-top: 10px;
+                        .green{
+                            color: green;
+                        }
+                        .red{
+                            color: red;
+                            
+                        }
+                        .green, .red{
+                            padding-top: 10px;
+                        }
+                        p{
+                            margin: 8px 0;
+                        }
+                        .borderline{
+                            // background:black;
+                            border-bottom:1px solid rgba(0,0,0,0.6);
+                            padding-bottom: 5px;
+                            padding-top: 10px;
+                        }
+                }
+            }
+            }
+        }
+    }
+    
+    .new-post-contents{
+        background-image: url("/landscape-2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        // margin:0 auto;
+        // text-align:center;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        .link-2{
+        position:fixed;
+        z-index:20;
+        top:10px;
+        right:30px;
+            a{
+                btn{
+                    border-color: rgba(255,255,255,0.6);
+                    color: rgba(255,255,255,0.6);
+                    font-size:24px;
+                    line-height:45px;
+                    width:200px;
+                    height:60px;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.9);
+                        border-color: rgba(0,0,0,0.6);
+                        color: rgba(0,0,0,0.6);
+                        
+                    }
+                }
+            }
+        }
+        
+        .link{
+            position:fixed;
+            z-index:20;
+            top:10px;
+            right:30px;
+            a{
+                btn{
+                    border-color: rgba(255,255,255,0.6);
+                    color: rgba(255,255,255,0.6);
+                    font-size:24px;
+                    line-height:45px;
+                    width:200px;
+                    height:60px;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.9);
+                        border-color: rgba(0,0,0,0.6);
+                        color: rgba(0,0,0,0.6);
+                        
+                    }
+                }
+            }
+        }
+        
+        .form-title{
+            // width:500px;
+            position: absolute;
+            top: 9%;
+            left: 5%;
+            // z-index: 0;
+            
+            h2{
+                font-size: 100px;
+                color: rgba(255,255,255,0.4);
+            }
+        }
+        .form-body{
+            margin-top: 300px;
+            margin-bottom: 120px;
+            padding: 20px 20px 100px 20px;
+            width: 500px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 6px;
+            box-shadow: 1px 1px 2px #a0a0a0;
+            // display: flex;
+            // flex-wrap: wrap;
+            input{
+                // text-align: right;
+                padding:0 15px;
+                width: 100%;
+                height: 40px;
+                border-radius: 6px;
+                background:rgba(255,255,255,0.8);
+                // border:1px solid #a0a0a0;
+                border:none;
+            }
+            textarea{
+                padding: 15px;
+                width: 100%;
+                height: 120px;
+                border-radius: 6px;
+                background: rgba(255,255,255,0.8);
+                // border:1px solid #a0a0a0;
+                border:none;
+            }
+            select{
+                width: 100%;
+                border-radius: 6px;
+                background:rgba(255,255,255,0.8);
+                // border:1px solid #a0a0a0;
+                border:none;
+                padding:15px;
+            }
+            
+            
+            .title, .genre, .content, .value, .act, .forWho{
+                padding: 10px 0;
+            }
+            .submit{
+                float: right;
+                padding-top: 40px;
+                width: 45%;
+                input{
+                height: 50px;
+                // box-shadow: 0 0 0 #000;
+                // border:1px solid #a0a0a0;
+                border:none;
+                    &:hover{
+                        font-size: 17px;
+                        background-color:rgba(255,255,0,0.3);
+                        transition:0.2s;
+                    }
+                }
+            } 
+        }
+        
+    }
+    
+    .post-show{
+        .form-title{
+            // width:500px;
+            position: absolute;
+            top: 9%;
+            left: 5%;
+            // z-index: 0;
+            
+            h2{
+                font-size: 100px;
+                color: rgba(255,255,255,0.6);
+            }
+        }
+        .post-contents{
+        background-image:url("/landscape-3.jpg");
+        background-size:cover;
+        background-position:center;
+        background-attachment:fixed;
+        // margin-top:200px;
+            .link{
+                position:fixed;
+                z-index:20;
+                top:10px;
+                right:30px;
+                a{
+                    btn{
+                        border-color: rgba(255,255,255,0.6);
+                        color: rgba(255,255,255,0.6);
+                        font-size:24px;
+                        line-height:45px;
+                        width:200px;
+                        height:60px;
+                        &:hover{
+                            background-color: rgba(255,255,255,0.9);
+                            border-color: rgba(0,0,0,0.6);
+                            color: rgba(0,0,0,0.6);
+                            
+                        }
+                    }
+                }
+            }
+            .link-2{
+                position:fixed;
+                z-index:20;
+                top:10px;
+                right:250px;
+                a{
+                    btn{
+                        border-color: rgba(255,255,255,0.6);
+                        color: rgba(255,255,255,0.6);
+                        font-size:24px;
+                        line-height:45px;
+                        width:200px;
+                        height:60px;
+                        &:hover{
+                            background-color: rgba(255,255,255,0.9);
+                            border-color: rgba(0,0,0,0.6);
+                            color: rgba(0,0,0,0.6);
+                            
+                        }
+                    }
+                }
+            }
+            .posts{
+                position:relative;
+                z-index:10;
+                min-height:1500px;
+                padding: 300px 0;
+                display:flex;
+                justify-content:center;
+                // min-height:1000px;
+                .post{
+                    width: 800px;
+                    border-radius:10px;
+                    padding:60px;
+                    // min-height:1000px;
+                    // height:1000px;
+                    background-color:rgba(255,255,255,0.8);
+                    // background-color:rgba(0,0,0,0.05);
+                    // background:#FFF;
+                    .post-header{
+                        width:100%;
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                            img{
+                                width:120px;
+                                height:120px;
+                                border-radius:50%;
+                                // margin:0 15px 15px 15px;
+                            }
+                            h3{
+                                font-size:32px;
+                                // margin:0 0 12px 20px;
+                            }
+                            .genre{
+                                // margin:0 0 12px 20px;
+                                width:120px;
+                                
+                            }
+    
+                    }
+                    .post-body{
+                        margin-top: 30px;
+                        font-size:20px;
+                        .install{
+                            a{
+                                background:none;
+                                box-shadow:none;
+                                border:none;
+                                height:auto;
+                                width:auto;
+                                .notyet{
+                                    color: red;
+                                    font-size:18px;
+                                }
+                                p{
+                                    color: red;
+                                }
+                            }
+                        }
+                            p{
+                                font-size:20px;
+                                margin: 20px 0;
+                                span{
+                                    font-size:16px;
+                                }
+                            }
+                    }
+                    .link3{
+                        text-align:right;
+                        padding-right:30px;
+                        a{
+                            display:inline-block;
+                            width:50px;
+                            height:50px;
+                            padding:0;
+                            margin:0;
+                            background-color:transparent;
+                            border:none;
+                            box-shadow:none;
+                            color:#333;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btn-group-sm .btn, .btn-sm{
+        font-size:20px;
+        margin-bottom:8px;
+    }
+    
+    .edit-contents{
+        background-image: url("/landscape-2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        // margin:0 auto;
+        // text-align:center;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        .link{
+            position:fixed;
+            z-index:20;
+            top:10px;
+            right:30px;
+            a{
+                btn{
+                    border-color: rgba(255,255,255,0.6);
+                    color: rgba(255,255,255,0.6);
+                    font-size:24px;
+                    line-height:45px;
+                    width:200px;
+                    height:60px;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.9);
+                        border-color: rgba(0,0,0,0.6);
+                        color: rgba(0,0,0,0.6);
+                        
+                    }
+                }
+            }
+        }
+        .link-2{
+            position:fixed;
+            z-index:20;
+            top:10px;
+            right:250px;
+            a{
+                btn{
+                    border-color: rgba(255,255,255,0.6);
+                    color: rgba(255,255,255,0.6);
+                    font-size:24px;
+                    line-height:45px;
+                    width:200px;
+                    height:60px;
+                    &:hover{
+                        background-color: rgba(255,255,255,0.9);
+                        border-color: rgba(0,0,0,0.6);
+                        color: rgba(0,0,0,0.6);
+                        
+                    }
+                }
+            }
+        }
+        
+        .form-title{
+            // width:500px;
+            position: absolute;
+            top: 9%;
+            left: 5%;
+            // z-index: 0;
+            
+            h2{
+                font-size: 100px;
+                color: rgba(255,255,255,0.4);
+                span{
+                    color:rgba(0,255,255,0.25);
+                }
+            }
+        }
+        .form-body{
+            margin: 300px auto 120px auto;
+            padding: 20px 20px 100px 20px;
+            width: 500px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 6px;
+            box-shadow: 1px 1px 2px #a0a0a0;
+            // display: flex;
+            // flex-wrap: wrap;
+            input{
+                // text-align: right;
+                padding:0 15px;
+                width: 100%;
+                height: 40px;
+                border-radius: 6px;
+                background:rgba(255,255,255,0.8);
+                // border:1px solid #a0a0a0;
+                border:none;
+            }
+            textarea{
+                width: 100%;
+                height: 120px;
+                border-radius: 6px;
+                background: rgba(255,255,255,0.8);
+                // border:1px solid #a0a0a0;
+                border:none;
+                padding: 5px 15px;
+            }
+            select{
+                width: 100%;
+                border-radius: 6px;
+                background:rgba(255,255,255,0.8);
+                // border:1px solid #a0a0a0;
+                border:none;
+            }
+            
+            
+            .title, .genre, .content, .value, .act, .forWho{
+                padding: 10px 0;
+            }
+            .submit{
+                float: right;
+                padding-top: 40px;
+                width: 45%;
+                input{
+                    height: 50px;
+                    // box-shadow: 0 0 0 #000;
+                    // border:1px solid #a0a0a0;
+                    border:none;
+                    transition:0.1s;
+                    &:hover{
+                        font-size: 17px;
+                        background-color:rgba(0,255,255,0.4);
+                        transition:0.2s;
+                    }
+                }
+            } 
+        }
+        
+    }
+
+
+
+@media screen and (max-width: 1024px) {
+/* 1024pxまでの幅の場合に適応される */
+
+}
+@media screen and (max-width: 768px) {
+/* 768pxまでの幅の場合に適応される */
+
+}
+@media screen and (max-width: 480px) {
+/* 480pxまでの幅の場合に適応される */
+    .form-title{
+        top: 15%;
+        h2{
+            color: rgba(255,255,255,0.8);
+            font-size:72px;
+        }
+    }
+    .post-contents{
+        .link{
+            top:15px;
+            right:15px;
+            a{
+                btn{
+                    font-size:20px;
+                    width:140px;
+                    height:50px;
+                    line-height:33px;
+                    background-color:rgba(255,255,255,0.5);
+                    color: rgba(0,0,0,0.5);
+                    border-color: rgba(0,0,0,0.2);
+                }
+            }
+        }
+        .posts{
+            padding-top: 200px;
+            padding-bottom: 100px;
+            // min-height: 812px;
+            .post{
+                a{
+                    width:95%;
+                    .post-header{
+                        display:flex;
+                        flex-direction:column;
+                        img{
+                            width:80px;
+                            height:80px;
+                            // width:100%;
+                        }
+                        h3{
+                            padding-top:20px;
+                        }
+                        btn{
+                            margin-top:20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .new-contents{
+    }
+
+    .new-post-contents{
+        background-image: url("/landscape-2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height:1313px;
+        .link{
+            top:15px;
+            right:15px;
+            a{
+                btn{
+                    font-size:20px;
+                    width:140px;
+                    height:50px;
+                    line-height:33px;
+                    background-color:rgba(255,255,255,0.5);
+                    color: rgba(0,0,0,0.5);
+                    border-color: rgba(0,0,0,0.2);
+                }
+            }
+        }
+        .form-title{
+            top: 13%;
+        }
+        form{
+
+                width:100%;
+                // margin: 200px 0 0 0;
+            // margin:0;
+            .form-body{
+                margin-left: 10px;
+                width:95%;
+                margin-top: 240px;
+            }
+        }
+    }
+.post-show{
+    .form-title{
+        top: 15%;
+        h2{
+            color: rgba(255,255,255,0.8);
+            font-size:56px;
+        }
+    }
+    .post-contents{
+        .link{
+            top:15px;
+            right:15px;
+            a{
+                btn{
+                    font-size:20px;
+                    width:140px;
+                    height:50px;
+                    line-height:33px;
+                    background-color:rgba(255,255,255,0.5);
+                    color: rgba(0,0,0,0.5);
+                    border-color: rgba(0,0,0,0.2);
+                }
+            }
+        }
+        .posts{
+            padding-top: 200px;
+            // padding-bottom: 400px;
+            min-height: auto;
+            .post{
+                padding: 30px;
+                width: 95%;
+                // height: 812px;
+                    .post-header{
+                        display:flex;
+                        flex-direction:column;
+                        img{
+                            width:80px;
+                            height:80px;
+                            // width:100%;
+                        }
+                        h3{
+                            padding-top:20px;
+                        }
+                        btn{
+                            margin-top:20px;
+                        }
+                    }
+                    .post-body{
+                        .install{
+                            a{
+
+                            }
+                        }
+                    }
+                
+            }
+        }
+    }   
+}
+
+}
+@media screen and (max-width: 320px) {
+/* 320pxまでの幅の場合に適応される */
+
+}

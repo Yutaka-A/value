@@ -1,0 +1,40 @@
+    <div class="new-contents">
+        <div class="link-2">
+            <a href="/"><btn class="btn btn-lg btn-outline-secondary">トップ</btn></a>
+        </div>
+        <div class="form-title">
+            <h2>ログインしよう。</h2>            
+        </div>
+            <div class="form-body">
+        <% if @error_message %>
+            <div class="form-error">
+                <%= @error_message %>
+            </div>
+        <% end %>
+        <%= form_tag("/login") do %>    
+                <div class="email">
+                    <div class="question"><h3>メールアドレス：</h3></div>
+                    <div class="answer">
+                        <input name="email" value="<%= @email %>">
+                    </div>
+                </div>
+                <div class="password">
+                    <div class="question"><h3>パスワード：</h3></div>
+                    <div class="answer">
+                        <input type="password" name="password" value="<%= @password %>">
+                    </div>
+                </div>
+                <div class="float">
+                    <%= link_to("/users/signup") do %>
+                    <div class="signup">
+                        新規登録
+                    </div>
+                    <% end %>
+                    <div class="submit">
+                        <input type="submit" value="ログイン">
+                    </div>
+                    <br>
+                </div>
+            </div>
+        <% end %>
+    </div>

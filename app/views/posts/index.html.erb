@@ -1,0 +1,45 @@
+<div class="form-title">
+    <h2>投稿一覧</h2>            
+</div>
+<div class="post-contents">
+    <div class="link">
+        <a href="/posts/new"><btn class="btn btn-lg btn-outline-secondary">投稿する</btn></a>
+    </div>
+    <div class="posts">
+        <% @posts.each do|post| %>
+            <div class="post">
+                <%= link_to("/posts/#{post.id}") do %>
+                    <div class="post-header">
+                        <img src="<%= "/user_images/#{post.user.user_images}" %>">
+                        <h3>作品：<%= post.title %></h3>
+                        <btn class="genre btn btn-sm btn-outline-success"><%= post.genre %></btn>
+                    </div>
+                    <div class="post-body">
+                        <p>紹介者：<%= post.user.name %></p>
+                        <p class="borderline">インストールした価値観：</p>
+                        <p><%= post.value %></p>
+                        <p class="borderline">こんな人におすすめしたい！：</p>
+                        <p><%= post.forWho %></p>
+                        <p class="red"> <span class="red fas fa-heart"></span>　<%= Install.where(post_id: post.id).count %></p>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
+        <!--<div class="post">-->
+        <!--    <a href="#">-->
+        <!--        <div class="post-header">-->
+        <!--            <img src="/face-2.jpg">-->
+        <!--            <h3>作品：銀河鉄道の夜</h3>-->
+        <!--            <btn class="genre btn btn-sm btn-outline-success">小説</btn>-->
+        <!--        </div>-->
+        <!--        <div class="post-body">-->
+        <!--            <p>インストールした価値観：</p>-->
+        <!--            <p>大切な人が死んでも、ぼくらの人生は続く。<br>-->
+        <!--            去った人との思い出を糧に、人は前進していかなければならない。</p>-->
+        <!--        </div>-->
+        <!--    </a>-->
+        <!--</div>-->
+
+ 
+    </div>
+</div>

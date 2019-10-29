@@ -1,0 +1,158 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* 1024px以上の幅の場合に適応される */
+.privacy, .terms{
+    margin: 20px;
+    h2{
+        margin: 40px;
+        font-weight: bold;
+    }
+    h3{
+        margin:20px;
+    }
+        ul{
+            list-style-type: decimal;
+            margin-left:16px;
+            li{
+            margin-left:16px;
+            // padding-left:16px;
+                
+            }
+        }
+}
+
+    .top-contents{
+    
+        height: 1200px;
+        width: 100%;
+        background-image:url("/landscape-6.jpg");
+        background-size:cover;
+        background-position:center;
+        .mask{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-wrap:wrap;
+            width:100%;
+            height:100%;
+             background-color: rgba(255,255,255,0.2);   
+            //  background-color:rgba(0,0,0,0.05);   
+           
+            h1{
+                padding-top: 160px;
+                font-size:68px;
+                font-weight:bold;
+                text-align:center;
+                text-shadow:4px 4px 2px #FFF;
+                
+            }
+            p{
+                // margin-top:-80px;
+                width:100%;
+                font-size:24px;
+                // margin:0 auto;
+                color:#FFF;
+                text-shadow:2px 2px 1px #000;
+                text-align:center;
+                span{
+                    color:#0066cc;
+                    text-shadow:2px 2px 1px #FFF;
+                }
+            }
+            .width{
+                width:100%;
+                text-align: center;
+            }
+            a{
+                display:inline-block;
+                padding:20px;
+                margin-top:-100px;
+                btn{
+                width: 450px;
+                }
+            }
+            .btn-outline-primary{
+                background-color: rgba(255,255,255,0.8);
+                &:hover{
+                    background-color: #007bff;
+                    
+                }
+            }
+            .btn-outline-danger{
+                background-color: rgba(255,255,255,0.8);
+                &:hover{
+                    background-color: #dc3545;
+                    
+                }
+            }
+            .links{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                // justify-content: center;
+                a{
+                    margin-top: 0;
+                    text-align: center;
+                    color: white;
+                    width: 100%;
+                }
+            }
+        }   
+    }
+
+
+
+@media screen and (max-width: 1024px) {
+/* 1024pxまでの幅の場合に適応される */
+
+}
+@media screen and (max-width: 768px) {
+/* 768pxまでの幅の場合に適応される */
+
+}
+@media screen and (max-width: 480px) {
+/* 480pxまでの幅の場合に適応される */
+
+
+html{
+    display: border-box;
+    // width: 410px; 
+    // padding: 0;
+}
+body{
+    // width: 410px; 
+    // padding: 0;
+    .top-contents{
+        padding: 0;
+        height: 812px;
+        width: 100%;
+        // background-size:contain;
+        .mask{
+            h1{
+                font-size: 44px;
+            }
+            p{
+                font-size: 18px;
+                // margin-top: -120px;
+                
+            }
+            a{
+                padding: 0;
+                btn{
+                    width: 350px;
+                }
+
+            }
+
+        }
+        
+    }
+}
+
+}
+@media screen and (max-width: 320px) {
+/* 320pxまでの幅の場合に適応される */
+}

@@ -1,0 +1,57 @@
+    <div class="new-post-contents">
+        <div class="link">
+            <a href="/posts/index"><btn class="btn btn-lg btn-outline-secondary">戻る</btn></a>
+        </div>
+        <div class="form-title">
+            <h2>投稿</h2>            
+        </div>
+        <%= form_tag("/posts/create") do %>    
+            <div class="form-body">
+                <% @post.errors.full_messages.each do |message| %>
+                    <%= message %>
+                <% end %>
+                <div class="title">
+                    <div class="question"><h3>作品：</h3>(15文字以内)</div>
+                    <div class="answer">
+                        <input type="text" name="title" value="<%= @post.title %>">
+                    </div>
+                </div>
+                <div class="genre">
+                    <div class="question"><h3>ジャンル：</h3></div>
+                    <div class="answer">
+                            <%= select_tag 'genre', options_for_select([["漫画", "漫画"], ["小説", "小説"], ["映画", "映画"], ["ドラマ", "ドラマ"], ["アニメ", "アニメ"], ["社説", "社説"], ["新聞", "新聞"], ["ドラマ", "ドラマ"], ["伝記", "伝記"], ["知り合いの格言", "知り合いの格言"], ["ゲーム", "ゲーム"], ["詩集", "詩集"], ["その他", "その他"]], :selected => "漫画") %>
+                    </div>  
+                </div>
+                <div class="content">
+                    <div class="question"><h3>ここが熱い！(作品のネタバレOK！)：</h3>(1000文字以内)</div>
+                    <div class="answer">
+                        <textarea name="content"><%= @post.content %></textarea>
+                    </div>
+                </div>
+                <div class="value">
+                    <div class="question"><h3>価値観の変化：</h3>(200文字以内)</div>
+                    <div class="answer">
+                        <input type="text" name="value" value="<%= @post.value %>">
+                    </div>
+                </div>
+                <div class="act">
+                    <div class="question"><h3>起こした行動：</h3>(200文字以内)</div>
+                    <div class="answer">
+                        <input type="text" name="act" value="<%= @post.act %>">
+                    </div>
+                </div>
+                <div class="forWho">
+                    <div class="question"><h3>どんな人におすすめ？</h3>(100文字以内)</div>
+                    <div class="answer">
+                        <input type="text" name="forWho" value="<%= @post.forWho %>">
+                    </div>
+                </div>
+                <div class="float">
+                    <div class="submit">
+                        <input type="submit" value="投稿">
+                    </div>
+                    <br>
+                </div>
+            </div>
+        <% end %>
+    </div>

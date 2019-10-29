@@ -1,0 +1,52 @@
+<div class="post-show">
+    <div class="form-title">
+        <h2>：投稿詳細</h2>            
+    </div>
+    <div class="post-contents">
+        <div class="link">
+            <a href="/posts/index"><btn class="btn btn-lg btn-outline-secondary">戻る</btn></a>
+        </div>
+    
+        <div class="posts">
+            <div class="post">
+                    <div class="post-header">
+                        <img src="<%= "/user_images/#{@user.user_images}" %>">
+                        <h3>作品：<%= @post.title %></h3>
+                        <btn class="genre btn btn-sm btn-outline-success"><%= @post.genre %></btn>
+                    </div>
+                    <div class="post-body">
+                        <p>紹介者：<%= @user.name %></p>
+                        <p class="borderline">ここが熱い！：</p>
+                        <p><%= @post.content %></p>
+                        <p class="borderline">インストールした価値観：</p>
+                        <p><%= @post.value %></p>
+                        <p class="borderline">起こした行動：</p>
+                        <p><%= @post.act %></p>
+                        <p class="borderline">こんな人におすすめしたい！：</p>
+                        <p><%= @post.forWho %></p>
+                        <% if Install.find_by(user_id: @current_user.id, post_id: @post.id) %>
+                            <div class="install">
+                                <%= link_to("/installs/#{@post.id}/destroy", {method: "post"}) do %>
+                                <p><span class="fas fa-heart">　いいね！　</span>：<%= @installs_count %></p>
+                                <% end %>
+                            </div>
+                        <% else %>
+                            <div class="install">
+                                <%= link_to("/installs/#{@post.id}/create", {method: "post"}) do %>
+                                <p><span class="fas fa-heart notyet">　いいね！　</span>：<%= @installs_count %></p>
+                                <% end %>
+                            </div>
+                        <% end %>
+                        
+                        
+                    </div>
+                    <% if @post.user_id == @current_user.id %>
+                        <div class="link3">
+                            <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+                            <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+                        </div>
+                    <% end %>
+            </div>
+        </div>
+    </div>
+</div>
